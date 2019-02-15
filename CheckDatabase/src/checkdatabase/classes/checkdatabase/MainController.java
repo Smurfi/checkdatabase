@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 mkroll
+ * Copyright (C) 2019 Michael Kroll
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,11 +32,9 @@ import javafx.scene.control.TextField;
 /**
  *
  * @author mkroll
- * @version 20160629
  */
 public class MainController implements Initializable {
 
-    //OracleConnect oracleConnect = new OracleConnect();
     @FXML
     TextField hostTextField;
     @FXML
@@ -54,7 +52,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // Nothing todo
     }
 
     /**

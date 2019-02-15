@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 mkroll
+ * Copyright (C) 2019 Michal Kroll
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,11 +28,10 @@ import java.util.logging.Logger;
  * Oracle connection class
  *
  * @author mkroll
- * @version 20160629
  */
 public class OracleConnect {
 
-    private static final String dbDriver = "oracle.jdbc.driver.OracleDriver";
+    private static final String DBDRIVER = "oracle.jdbc.driver.OracleDriver";
     private static String dbUrl = "";
     private static String dbUser = "";
     private static String dbPwd = "";
@@ -57,17 +56,14 @@ public class OracleConnect {
         dbPwd = _password;
         dbUrl = "jdbc:oracle:thin:@" + _host + ":" + _port + ":" + _sid;
 
-        // Datenbankverbindung aufbauen
-
-            Class.forName(dbDriver);
-            dbConnection = DriverManager.getConnection(dbUrl, dbUser, dbPwd);
+        Class.forName(DBDRIVER);
+        dbConnection = DriverManager.getConnection(dbUrl, dbUser, dbPwd);
     }
 
     /**
      * Close database connection
      */
     public static void closeDB() {
-        // Datenbankverbindung aufbauen
         try {
             dbConnection.close();
         } catch (SQLException ex) {
@@ -83,7 +79,7 @@ public class OracleConnect {
      */
     public static String checkConnection() throws SQLException {
         boolean reachable;
-            reachable = dbConnection.isValid(10); // 10 sec
+        reachable = dbConnection.isValid(10); // 10 sec
         if (reachable) {
             return "Oracle Database connected!!!";
         } else {

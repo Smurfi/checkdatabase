@@ -28,7 +28,6 @@ import javafx.stage.WindowEvent;
 /**
  *
  * @author mkroll
- * @version 20160629
  */
 public class CheckDatabase extends Application {
 
@@ -61,7 +60,6 @@ public class CheckDatabase extends Application {
 
         primaryStage.setScene(undecoratorScene);
         primaryStage.toFront();
-//        primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.setResizable(false);
         primaryStage.getIcons().add(new Image(CheckDatabase.class.getResourceAsStream("gfx/database_link.png")));
         primaryStage.show();
